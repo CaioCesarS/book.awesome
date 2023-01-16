@@ -23,8 +23,9 @@ function searchBook() {
     list.empty();
 
     let search = $("#search").val()
-    let books = DATA.filter(e => e.name.toLowerCase().includes(search.toLowerCase()))
-    console.log(books)
+    let books = DATA.filter(e => 
+        e.name.toLowerCase().includes(search.toLowerCase()) || 
+        e.author.toLowerCase().includes(search.toLowerCase()))
 
     books.forEach((item)=>{
         let child = card(item)
@@ -38,7 +39,8 @@ function card(item) {
                 <div class="card h-100">
                     <img src="${item.image}" class="card-img-top rounded mx-auto d-block" style="max-width:200px;height:auto">
                     <div class="card-body" style="position:relative">
-                        <h5 class="card-title">${item.name}</h5>
+                        <h5 class="card-title fw-bold">${item.name}</h5>
+                        <span class="fw-bolder">por: <span class="text-muted fw-normal">${item.author}</span></span>
                         <p class="card-text" style="margin-bottom:50px">${item.description}</p>
                         <a href="${item.url}" target="_blanck" class="btn btn-primary text-end" style="position:absolute;bottom:16px;right:16px">Comprar agora</a>
                     </div>
