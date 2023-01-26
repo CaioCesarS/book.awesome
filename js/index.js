@@ -40,14 +40,15 @@ function shortDescription(description) {
 
 function card(item) {
     return `<div class="col">
-                <div class="card h-100">
-                    <img src="${item.image}" class="card-img-top rounded mx-auto d-block" style="max-width:200px;height:auto">
-                    <div class="card-body" style="position:relative">
-                        <h5 class="card-title fw-bold">${item.name}</h5>
-                        <span class="fw-bolder">por: <span class="text-muted fw-normal">${item.author}</span></span>
-                        <p class="card-text" style="margin-bottom:50px">${shortDescription(item.description)}</p>
-                        <a href="${item.url}" target="_blanck" class="btn btn-primary text-end" style="position:absolute;bottom:16px;right:16px">Comprar agora</a>
+                <a href="${item.url}" target="_blank">
+                    <div class="card h-100">
+                        <img src="${item.image}" class="card-img-top rounded mx-auto d-block" style="max-width:250px;height:auto">
+                        <div class="card-body" style="position:relative">
+                            <h5 class="card-title fw-bold">${item.name}</h5>
+                            <span class="fw-bolder">por: <span class="text-muted fw-normal">${item.author}</span></span>
+                            <p class="card-text" style="margin-bottom:50px">${shortDescription(item.description)}</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>`
 }
